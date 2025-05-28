@@ -7,6 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install Ansible
+        run: |
+          apt-get update
+          apt-get install -y ansible
+
       - name: Run Ansible Playbook
         run: |
           ansible-playbook -i inventory playbook.yml
