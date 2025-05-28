@@ -1,0 +1,19 @@
+- name: Desplegar app en localhost
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Actualizar apt
+      apt:
+        update_cache: yes
+
+    - name: Instalar nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Asegurar que nginx esté iniciado
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
