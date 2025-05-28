@@ -1,18 +1,30 @@
-- name: Deploy app
-  hosts: localhost
+
+- hosts: all
   tasks:
-    - name: update apt
-      apt:
-        update_cache: yes
+    - name: Print message
+      debug:
+        msg: Hello Ansible World
 
-    - name: Install nginx
-      apt:
-        name: nginx
-        state: present
 
-    - name: check nginx
-      service:
-        name: nginx
-        state: started
-        enabled: yes
+
+
+
+
+#- name: Deploy app
+#  hosts: localhost
+#  tasks:
+#    - name: update apt
+#      apt:
+#        update_cache: yes
+#
+#    - name: Install nginx
+#      apt:
+#        name: nginx
+#        state: present
+#
+#    - name: check nginx
+#      service:
+#        name: nginx
+#        state: started
+#        enabled: yes
 
