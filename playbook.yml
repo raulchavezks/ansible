@@ -1,6 +1,5 @@
 - name: Desplegar app en localhost
   hosts: localhost
-  become: yes
   tasks:
     - name: Actualizar apt
       apt:
